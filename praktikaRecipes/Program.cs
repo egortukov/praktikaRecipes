@@ -7,31 +7,35 @@ class Program
     }
 }
 
-class Ingredients
+public class Ingredients
 {
-    public static List<Ingredients> AvailableIngredients { get; set; } = new List<Ingredients>();
+    public string NameOfInridient { get; set; }
 }
 
-class Recipes
+public class Recipes
 {
     public string NameOfRecipe { get; set; }
     public string Description { get; set; }
-    public List<Ingredients> IngredientsList { get; set; } = new List<Ingredients>();
+    public List<Ingredients> IngredientsList { get; set; }
     public string CookingOrder { get; set; }
     public Users Chef { get; set; }
     public Dish TypeOfDish { get; set; }
     public int Rating { get; set; }
 }
 
-class Dish
+public enum Dish
 {
+    Dessert,
+    Pervoe,
+    Vtoroe,
+    Soup
+}
+
+public class Users
+{
+    public string Name { get; set; }
     public string NameOfDish { get; set; }
     public DateTime Date { get; set; }
     public List<Recipes> Recipes { get; set; }
     public int Rating { get; set; }
-}
-
-class Users
-{
-    public string Name { get; set; }
 }
